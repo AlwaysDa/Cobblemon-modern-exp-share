@@ -1,4 +1,4 @@
-# Modern Exp Share
+# Cobblemon Modern Exp Share
 
 A **Cobblemon (Fabric)** Exp. Share behavior “modernization” mod: when a player has `cobblemon:exp_share` in their inventory/hotbar, the victory payout phase will grant extra Experience (EXP) and Effort Values (EV) to party members of the same player that **did not participate** and **are not fainted**.
 
@@ -31,7 +31,7 @@ Extra rewards are granted:
 ## Configuration
 
 Config file location:
-- `config/modern_exp_share.json`
+- `config/cobblemon_modern_exp_share.json`
 
 Default config:
 
@@ -73,7 +73,7 @@ From the project root:
 ```
 
 Output:
-- `build/libs/modern-exp-share-<version>.jar`
+- `build/libs/cobblemon-modern-exp-share-<version>.jar`
 
 ## Install / Usage
 

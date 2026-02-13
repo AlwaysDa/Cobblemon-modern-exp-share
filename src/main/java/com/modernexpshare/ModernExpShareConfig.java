@@ -14,7 +14,8 @@ import java.nio.file.Path;
 
 public final class ModernExpShareConfig {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
-    private static final String FILE_NAME = ModernExpShareMod.MOD_ID + ".json";
+    private static final String FILE_NAME = "cobblemon_modern_exp_share.json";
+    private static final String LEGACY_FILE_NAME = ModernExpShareMod.MOD_ID + ".json";
 
     private static volatile ModernExpShareConfig current = defaults();
 
@@ -27,27 +28,41 @@ public final class ModernExpShareConfig {
 
     public static void loadOrCreate(MinecraftServer server) {
         // Server-authoritative config (reads from config/ on dedicated or integrated server)
-        Path configPath = FabricLoader.getInstance().getConfigDir().resolve(FILE_NAME);
+        Path configDir = FabricLoader.getInstance().getConfigDir();
+        Path configPath = configDir.resolve(FILE_NAME);
+        Path legacyConfigPath = configDir.resolve(LEGACY_FILE_NAME);
 
         ModernExpShareConfig loaded = null;
+        Path loadedFromPath = null;
+        Path writeBackToPath = configPath;
+
         if (Files.exists(configPath)) {
-            try (Reader reader = Files.newBufferedReader(configPath)) {
+            loadedFromPath = configPath;
+        } else if (Files.exists(legacyConfigPath)) {
+            // Backward-compat: read legacy file if present
+            loadedFromPath = legacyConfigPath;
+        }
+
+        if (loadedFromPath != null) {
+            try (Reader reader = Files.newBufferedReader(loadedFromPath)) {
                 loaded = GSON.fromJson(reader, ModernExpShareConfig.class);
             } catch (IOException | JsonSyntaxException e) {
-                ModernExpShareMod.LOGGER.warn("Failed to read config {}, using defaults: {}", configPath, e.toString());
+                ModernExpShareMod.LOGGER.warn("Failed to read config {}, using defaults: {}", loadedFromPath, e.toString());
             }
         }
 
         if (loaded == null) {
             loaded = defaults();
-            try {
-                Files.createDirectories(configPath.getParent());
-                try (Writer writer = Files.newBufferedWriter(configPath)) {
-                    GSON.toJson(loaded, writer);
-                }
-            } catch (IOException e) {
-                ModernExpShareMod.LOGGER.warn("Failed to write default config {}: {}", configPath, e.toString());
+        }
+
+        // Always write the resolved config to the new path (and create file if missing).
+        try {
+            Files.createDirectories(writeBackToPath.getParent());
+            try (Writer writer = Files.newBufferedWriter(writeBackToPath)) {
+                GSON.toJson(loaded, writer);
             }
+        } catch (IOException e) {
+            ModernExpShareMod.LOGGER.warn("Failed to write config {}: {}", writeBackToPath, e.toString());
         }
 
         loaded.sharedExpMultiplier = clampNonNegative(loaded.sharedExpMultiplier, 0.5);
@@ -55,7 +70,7 @@ public final class ModernExpShareConfig {
         current = loaded;
 
         ModernExpShareMod.LOGGER.info("Config loaded: sharedExpMultiplier={}, sharedEvMultiplier={} ({})",
-                current.sharedExpMultiplier, current.sharedEvMultiplier, configPath);
+            current.sharedExpMultiplier, current.sharedEvMultiplier, writeBackToPath);
     }
 
     private static double clampNonNegative(double value, double fallback) {

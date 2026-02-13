@@ -1,4 +1,4 @@
-# Modern Exp Share
+# Cobblemon Modern Exp Share
 
 一个用于 **Cobblemon (Fabric)** 的 Exp. Share（学习装置）行为“现代化”模组：当玩家背包/物品栏中持有 `cobblemon:exp_share` 时，在战斗胜利结算阶段，会把额外的经验值（EXP）和努力值（EV）分配给同一玩家队伍中 **未参战且未昏厥** 的队友。
 
@@ -33,7 +33,7 @@ English README: [README_EN.md](README_EN.md)
 ## 配置
 
 配置文件路径（服务端/单人世界通用）：
-- `config/modern_exp_share.json`
+- `config/cobblemon_modern_exp_share.json`
 
 默认配置示例：
 
@@ -72,7 +72,7 @@ English README: [README_EN.md](README_EN.md)
 ```
 
 产物默认输出到：
-- `build/libs/modern-exp-share-<version>.jar`
+- `build/libs/cobblemon-modern-exp-share-<version>.jar`
 
 ## 安装/使用
 

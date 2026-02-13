@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "id": "modern_exp_share",
   "version": "${version}",
-  "name": "Modern Exp Share",
+  "name": "Cobblemon Modern Exp Share",
   "description": "Exp Share behavior modernization for Cobblemon (inventory-based team sharing).",
-  "authors": ["local"],
+  "authors": ["AlwaysDa"],
   "license": "MIT",
   "environment": "*",
   "entrypoints": {
