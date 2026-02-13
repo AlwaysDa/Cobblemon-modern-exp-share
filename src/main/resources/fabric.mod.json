@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "modern_exp_share",
+  "version": "${version}",
+  "name": "Modern Exp Share",
+  "description": "Exp Share behavior modernization for Cobblemon (inventory-based team sharing).",
+  "authors": ["local"],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.modernexpshare.ModernExpShareMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.17.2",
+    "fabric-api": ">=0.116.6+1.21.1",
+    "minecraft": "1.21.1",
+    "java": ">=21",
+    "cobblemon": "1.7.1+1.21.1"
+  }
+}

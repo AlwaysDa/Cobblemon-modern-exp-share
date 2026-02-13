@@ -1,0 +1,21 @@
+.gradle/
+build/
+out/
+run/
+
+*.log
+*.hprof
+
+# Local dependencies / reference materials (do not commit)
+libs/*.jar
+startmod/
+tools/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+Thumbs.db
+Desktop.ini
