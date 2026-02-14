@@ -11,6 +11,9 @@ libs/*.jar
 startmod/
 tools/
 
+# Design/source assets that shouldn't ship
+exp_share.png
+
 # IDE
 .idea/
 *.iml

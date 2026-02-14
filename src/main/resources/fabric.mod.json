@@ -4,7 +4,11 @@
   "version": "${version}",
   "name": "Cobblemon Modern Exp Share",
   "description": "Exp Share behavior modernization for Cobblemon (inventory-based team sharing).",
+  "icon": "assets/modern_exp_share/icon.png",
   "authors": ["AlwaysDa"],
+  "contact": {
+    "sources": "https://github.com/AlwaysDa/Cobblemon-modern-exp-share"
+  },
   "license": "MIT",
   "environment": "*",
   "entrypoints": {
