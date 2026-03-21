@@ -86,4 +86,8 @@ Output:
 
 ## License
 
-MIT (see the project’s license declaration/files for the authoritative license).
+MIT. See [LICENSE](LICENSE) for the full license text.
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md).

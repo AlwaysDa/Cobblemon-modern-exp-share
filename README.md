@@ -85,4 +85,8 @@ English README: [README_EN.md](README_EN.md)
 
 ## 许可证
 
-MIT（以工程内实际 License 文件/声明为准）。
+MIT，详见 [LICENSE](LICENSE)。
+
+## 更新记录
+
+详见 [CHANGELOG.md](CHANGELOG.md)。
