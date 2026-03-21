@@ -19,6 +19,10 @@ exp_share.png
 *.iml
 .vscode/
 
+# Local Copilot/agent customization files
+.github/skills/
+.github/java-upgrade/
+
 # OS
 Thumbs.db
 Desktop.ini

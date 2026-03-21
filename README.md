@@ -9,7 +9,7 @@ English README: [README_EN.md](README_EN.md)
 - Minecraft: **1.21.1**
 - Fabric Loader: **>= 0.17.2**
 - Fabric API: **>= 0.116.6+1.21.1**
-- Cobblemon (Fabric): **1.7.1+1.21.1**
+- Cobblemon (Fabric): **>= 1.7.3+1.21.1**
 - Java: **21**
 
 模组信息：
@@ -57,7 +57,10 @@ English README: [README_EN.md](README_EN.md)
 1) 准备本地 Cobblemon Jar
 
 本项目使用本地依赖方式引用 Cobblemon，请确保以下文件存在：
-- `libs/cobblemon-fabric-1.7.1+1.21.1.jar`
+- `libs/*Cobblemon-fabric-1.7.3+1.21.1.jar`
+
+支持启动器重命名后的文件名，例如：
+- `libs/[宝可梦-本体]Cobblemon-fabric-1.7.3+1.21.1.jar`
 
 2) 确保使用 Java 21
 

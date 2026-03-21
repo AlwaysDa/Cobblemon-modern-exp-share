@@ -7,7 +7,7 @@ A **Cobblemon (Fabric)** Exp. Share behavior “modernization” mod: when a pla
 - Minecraft: **1.21.1**
 - Fabric Loader: **>= 0.17.2**
 - Fabric API: **>= 0.116.6+1.21.1**
-- Cobblemon (Fabric): **1.7.1+1.21.1**
+- Cobblemon (Fabric): **>= 1.7.3+1.21.1**
 - Java: **21**
 
 Mod metadata:
@@ -55,7 +55,10 @@ This project includes a Gradle Wrapper (pinned to Gradle 9.2.0). Use the wrapper
 ### 1) Provide the Cobblemon jar locally
 
 This project references Cobblemon as a local jar dependency. Make sure the file exists:
-- `libs/cobblemon-fabric-1.7.1+1.21.1.jar`
+- `libs/*Cobblemon-fabric-1.7.3+1.21.1.jar`
+
+Launcher-renamed filenames are also supported, for example:
+- `libs/[宝可梦-本体]Cobblemon-fabric-1.7.3+1.21.1.jar`
 
 This jar is intentionally **gitignored** (do not commit/distribute it).
 
